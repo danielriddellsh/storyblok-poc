@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Grid = ({ blok }: Props) => (
-  <ListGroup {...storyblokEditable(blok)} key={blok._uid} data-test="grid">
+  <ListGroup {...storyblokEditable(blok)} data-test="grid">
     {(blok.columns as SbBlokData[]).map((nestedBlok) => (
       <ListGroup.Item key={nestedBlok._uid}>
         <StoryblokComponent blok={nestedBlok} />

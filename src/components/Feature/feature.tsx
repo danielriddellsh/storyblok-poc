@@ -1,7 +1,7 @@
 // "use server";
 import { storyblokEditable, SbBlokData } from "@storyblok/react";
-import Link from "next/link";
-import { CardLink } from "react-bootstrap";
+import Link from "../Link/link";
+import Image from "../Image/image";
 
 interface Props {
   blok: SbBlokData;
@@ -9,11 +9,12 @@ interface Props {
 
 const Feature = ({ blok }: Props) => {
   return (
-    <div {...storyblokEditable(blok)} key={blok._uid} data-test="feature">
+    <div {...storyblokEditable(blok)} data-test="feature">
       <div>
         <div>{blok.featureTitle as string}</div>
         <p>{blok.featureText as string}</p>
-        {blok.featureButtonLink !== undefined && <Link href={(blok.featureButtonLink as any)?.url as string}>{blok.featureButtonLabel as string}</Link>}
+        {blok.ctaLink && <Link blok={blok} />}
+        {blok.imgSource && <Image blok={blok} />}
       </div>
     </div>
   );

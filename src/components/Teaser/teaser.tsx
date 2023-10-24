@@ -1,5 +1,7 @@
 // "use server";
-import { SbBlokData, storyblokEditable } from "@storyblok/react/rsc";
+import { storyblokEditable, SbBlokData } from "@storyblok/react";
+import Link from "../Link/link";
+import Image from "../Image/image";
 
 interface Props {
   blok: SbBlokData;
@@ -7,9 +9,14 @@ interface Props {
 
 const Teaser = ({ blok }: Props) => {
   return (
-    <h2 data-cy="teaser" {...storyblokEditable(blok)}>
-      {blok.headline as string}
-    </h2>
+    <div {...storyblokEditable(blok)} data-test="teaser">
+      <div>
+        {blok.imgSource && <Image blok={blok} />}
+        <div>{blok.featureTitle as string}</div>
+        <p>{blok.featureText as string}</p>
+        {blok.ctaLink && <Link blok={blok} />}
+      </div>
+    </div>
   );
 };
 
