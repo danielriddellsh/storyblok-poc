@@ -13,7 +13,7 @@ const Feature = ({ blok }: Props) => {
       <div>
         <div>{blok.featureTitle as string}</div>
         <p>{blok.featureText as string}</p>
-        {blok.featureButton !== undefined && <Link href={blok.featureButton?.url as string}>{blok.featureButton?.url as string}</Link>}
+        {blok.featureButtonLink !== undefined && <Link href={(blok.featureButtonLink as any)?.url as string}>{blok.featureButtonLabel as string}</Link>}
       </div>
     </div>
   );
