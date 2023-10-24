@@ -1,5 +1,5 @@
 "use client";
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+import { storyblokInit, apiPlugin } from "@storyblok/react/rsc"
 
 import Page from "../Page/page";
 import Section from "../Section/section";

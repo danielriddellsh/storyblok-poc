@@ -1,6 +1,7 @@
 // "use server";
 import { SbBlokData, storyblokEditable } from "@storyblok/react/rsc";
 import Title from "../Title/title";
+import { render } from 'storyblok-rich-text-react-renderer';
 
 interface Props {
   blok: SbBlokData;
@@ -13,8 +14,8 @@ const Hero = ({ blok }: Props) => {
       backgroundSize: 'cover',
       minHeight: '50vh'
     }}>
-      <Title blok={blok} />
-      <p>{blok.heroContent as string}</p>
+      <Title blok={blok} align='text-start' />
+      {render(blok.heroContent)}
     </div>
   );
 };

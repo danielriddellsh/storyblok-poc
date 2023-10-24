@@ -2,6 +2,7 @@
 import { storyblokEditable, SbBlokData } from "@storyblok/react";
 import Link from "../Link/link";
 import Image from "../Image/image";
+import { render } from 'storyblok-rich-text-react-renderer';
 
 interface Props {
   blok: SbBlokData;
@@ -12,8 +13,8 @@ const Teaser = ({ blok }: Props) => {
     <div {...storyblokEditable(blok)} data-test="teaser">
       <div>
         {blok.imgSource && <Image blok={blok} />}
-        <div>{blok.featureTitle as string}</div>
-        <p>{blok.featureText as string}</p>
+        {render(blok.featureTitle)}
+        {render(blok.featureText)}
         {blok.ctaLink && <Link blok={blok} />}
       </div>
     </div>

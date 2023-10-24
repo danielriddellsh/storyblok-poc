@@ -7,13 +7,13 @@ interface Props {
 }
 
 const Grid = ({ blok }: Props) => (
-  <ListGroup {...storyblokEditable(blok)} data-test="grid">
+  <div {...storyblokEditable(blok)} className="row" data-test="grid">
     {(blok.columns as SbBlokData[]).map((nestedBlok) => (
-      <ListGroup.Item key={nestedBlok._uid}>
+      <div key={nestedBlok._uid} className="col">
         <StoryblokComponent blok={nestedBlok} />
-      </ListGroup.Item>
+      </div>
     ))}
-  </ListGroup>
+  </div>
 );
 
 export default Grid;
