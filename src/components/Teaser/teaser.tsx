@@ -10,12 +10,16 @@ interface Props {
 
 const Teaser = ({ blok }: Props) => {
   return (
-    <div {...storyblokEditable(blok)} data-test="teaser">
-      <div>
+    <div {...storyblokEditable(blok)} data-test="teaser" className="row">
+      <div className="col">
         {blok.imgSource && <Image blok={blok} />}
-        {render(blok.featureTitle)}
-        {render(blok.featureText)}
-        {blok.ctaLink && <Link blok={blok} />}
+      </div>
+      <div className="col">
+        <div className="card-body">
+          {render(blok.featureTitle)}
+          {render(blok.featureText)}
+          {blok.ctaLink && <Link blok={blok} />}
+        </div>
       </div>
     </div>
   );

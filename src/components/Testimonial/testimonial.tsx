@@ -8,9 +8,9 @@ interface Props {
 
 const Testimonial = ({ blok }: Props) => {
   return (
-    <div {...storyblokEditable(blok)} data-test="testimonial">
+    <div {...storyblokEditable(blok)} data-test="testimonial" className="text-center">
       {render(blok.quote)}
-      <cite>{blok.author as string}</cite>
+      <br/><cite>{blok.author as string}</cite>
     </div>
   );
 };

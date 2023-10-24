@@ -21,3 +21,5 @@ export default function RootLayout({
     </StoryblokProvider>
   );
 }
+
+export const fetchCache = 'force-no-store'
