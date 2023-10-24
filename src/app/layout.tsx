@@ -1,10 +1,10 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "@/components/StoryblokProvider/storyblok-provider";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './globals.scss'
 
 storyblokInit({
-  accessToken: "Pfx3cHRXE7mZU2V2QTly8Att",
+  accessToken: process.env.STORYBLOK_API_TOKEN,
   use: [apiPlugin],
 });
 

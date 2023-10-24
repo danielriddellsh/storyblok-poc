@@ -16,7 +16,7 @@ export default async function Dentists() {
   );
 }
 
-export async function fetchData() {
+async function fetchData() {
   let sbParams: ISbStoriesParams = { version: "draft" };
 
   const storyblokApi: StoryblokClient = getStoryblokApi();

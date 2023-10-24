@@ -7,7 +7,7 @@ import Grid from "../Grid/grid";
 import Feature from "../Feature/feature";
 
 storyblokInit({
-  accessToken: "Pfx3cHRXE7mZU2V2QTly8Att",
+  accessToken: process.env.storyBlok_ApiToken,
   use: [apiPlugin],
   components: {
     teaser: Teaser,
